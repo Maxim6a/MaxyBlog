@@ -1,7 +1,8 @@
 const express = require('express');
 const server = express();
-require('dotenv').config();
+require('dotenv').config({ path: './.env_server' });
 const bodyParser = require('body-parser');
+const sequelize = require('./core/connect_db');
 
 server.use(bodyParser.urlencoded({
   extended: false
